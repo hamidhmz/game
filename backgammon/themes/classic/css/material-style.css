@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'iran_sans';
+    src: url('../fonts/IRANSansWeb(FaNum)_UltraLight.eot?#') format('eot'),
+        url('../fonts/IRANSansWeb(FaNum)_UltraLight.woff') format('woff'),
+        url('../fonts/IRANSansWeb(FaNum)_UltraLight.woff2') format('woff2'),
+        url('../fonts/IRANSansWeb(FaNum)_UltraLight.ttf') format('truetype');
+}
+*:not(.material-icons):not(.indicators){direction: rtl !important;text-align: right !important;}
+
+body{font-family: 'iran_sans';background-image: url('../images/s1.jpg');background-size: 100% 100%;background-attachment: fixed;}
+ul {padding: 0;}
+
+.select-wrapper span.caret{right: auto;left: 0;}
+.nav-extended {margin-bottom: 15px;}
+.brand-logo {float: left;position: static !important;height: 64px;}
+.brand-logo img {height: 54px;margin: 5px 0;}
+
+@media (max-width: 772px) {
+    .brand-logo {height: 56px;position: absolute !important;}
+    .brand-logo img {height: 46px;margin: 5px 0;}
+}

@@ -1,0 +1,715 @@
+::-moz-selection {background: #b3d4fc;text-shadow: none;}
+::selection {background: #b3d4fc;text-shadow: none;}
+
+::-webkit-scrollbar { width: 12px;}
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); border-radius: 10px;}
+::-webkit-scrollbar-thumb { border-radius: 10px;  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); }
+
+html, button, input, select, textarea {color: #222;}
+hr {display: block;height: 1px;border: 0;border-top: 1px solid #ccc;margin: 1em 0;padding: 0;}
+img {vertical-align: middle;}
+fieldset {border: 0;margin: 0;padding: 0;}
+textarea {resize: vertical;}
+.visible-mobile {display: none;}
+.text-center {text-align: center;}
+.myboard {background-image: url('../images/board.png');background-size: 100% 100%;}
+.players {
+    position: absolute;
+    /*top: 40px;*/
+    left: 35px;
+    width: 170px;
+    height: 100%;
+    max-height: 600px;
+    background-image: url('../images/playersbg.png');
+    padding: 15px 12px;
+    color: #FFF;
+    text-align: center !important;
+    background-size: 100% 100%;
+}
+
+.undo {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 44%;
+    right: 49%;
+    width: 3.5%;
+    height: 5%;
+    cursor: pointer;
+}
+.undo .btn {
+    line-height: none;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/Undo.png');
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.handover {
+    cursor: pointer;
+    text-align: center !important;
+    background: #0AA;
+    padding: 2px 0;
+    border-radius: 4px;
+    width: 80%;
+    margin: 10px auto;
+}
+.sixPairs {margin-bottom: 15px;width: 100%;height: 116px;}
+.sixPairs img {width: 100%;height: 100%;}
+#game-sets {direction: rtl;text-align: center;}
+#gameAmount {text-align: center;}
+#player1Name, #player2Name {text-align: center;}
+#player1Name.opponent:before, #player2Name.opponent:before {content: ' ';background-color: white;display: inline-block;width: 15px;height: 15px;margin-left: 5px;border-radius: 50%;}
+#player1Name.disconnected:before, #player2Name.disconnected:before {background-color: red;}
+#player1Name.connected:before, #player2Name.connected:before {background-color: green;}
+#player1Name, #player2Name, #player1Dice, #player2Dice {margin-bottom: 5px;}
+.timer1, .timer2 {direction: rtl;text-align: center !important;}
+#player1Wins, #player2Wins {text-align: center;}
+#end_game {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    background: #10181F;
+    color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    // background-image: url('../images/bg.png');
+    // background-repeat: repeat;
+}
+#end_game span{background: goldenrod;font-weight: bold;padding: 5px 10px;display: inline-block;color: #fff;border-radius: 4px;}
+.user-connection {float: right;width: 20px;height: 20px;background: #FFF;}
+.user-connection.connected {background: green;}
+.user-connection.disconnected {background: red;}
+.chromeframe {margin: 0.2em 0;background: #ccc;color: #000;padding: 0.2em 0;}
+#gui {
+    position: absolute;
+    z-index: 1;
+    left: 205px;
+    /*right: 0;*/
+    width: 840px;
+    height: 100%;
+    max-height:600px;
+    /*margin: 0 auto;*/
+    background-color: #6d260c;
+    box-shadow: inset 0 0 5px #000000;
+}
+#game-board {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 5px #000000;
+}
+.point {
+    position: absolute;
+    height: 36%;
+    width: 6.25%;
+}
+.temp {
+    opacity: 0.3;
+    filter: alpha(opacity = 85);
+}
+.checker {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    min-width: 100%;
+    height: 23%;
+    background-size: 100% 100%;
+}
+.checker.selected {
+    background-image: url("checkers_active.png");
+}
+.checker:hover {
+    opacity: 0.85;
+    filter: alpha(opacity = 85);
+}
+.checker-white {
+    /*background-position: 0px 0px;*/
+    background-image: url("../images/piece-white.png");
+}
+.checker-brown {
+    background-image: url("../images/piece-black.png");
+    /*background-position: 0px -50px;*/
+}
+.dice {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
+.dice-white {
+    width: 5.25%;
+    height: 10%;
+    /*background-image: url();*/
+    /*background-position: 0px 0px;*/
+}
+.dice-brown {
+    width: 5.25%;
+    height: 10%;
+    /*background-position: 0px -64px;*/
+}
+.white-one {
+    background-image: url('../images/1.png');
+    /*background-position: -64px 0px;*/
+}
+.white-two {
+    background-image: url('../images/2.png');
+    /*background-position: -128px 0px;*/
+}
+.white-three {
+    background-image: url('../images/3.png');
+    /*background-position: -192px 0px;*/
+}
+.white-four {
+    background-image: url('../images/4.png');
+    /*background-position: -256px 0px;*/
+}
+.white-five {
+    background-image: url('../images/5.png');
+    /*background-position: -320px 0px;*/
+}
+.white-six {
+    background-image: url('../images/6.png');
+    /*background-position: -384px 0px;*/
+}
+.brown-one {
+    background-image: url('../images/1.png');
+    /*background-position: -64px -64px;*/
+}
+.brown-two {
+    background-image: url('../images/2.png');
+    /*background-position: -128px -64px;*/
+}
+.brown-three {
+    background-image: url('../images/3.png');
+    /*background-position: -192px -64px;*/
+}
+.brown-four {
+    background-image: url('../images/4.png');
+    /*background-position: -256px -64px;*/
+}
+.brown-five {
+    background-image: url('../images/5.png');
+    /*background-position: -320px -64px;*/
+}
+.brown-six {
+    background-image: url('../images/6.png');
+    /*background-position: -384px -64px;*/
+}
+.topdown-checker {
+    /* width: 43px;height: 17px; */
+    position: absolute;
+    width: 100%;
+    min-width: 100%;
+    height: 23%;
+    background-size: 100% 100%;
+}
+.topdown-white {
+    background-image: url('../images/piece-white.png');
+    /*background-position: 0px 0px;*/
+}
+.topdown-brown {
+    background-image: url('../images/piece-black.png');
+    /*background-position: 0px -17px;*/
+}
+.pointer {
+    cursor: pointer;
+}
+.button {
+    position: absolute;
+    width: 101px;
+    min-width: 101px;
+    height: 111px;
+    min-height: 111px;
+    background-image: url("buttons.png");
+    opacity: 0.8;
+    filter: alpha(opacity = 80);
+
+    font-size: 24px;
+    text-align: center;
+    text-shadow: #000000 0px 0px 3px;
+    line-height: 180px;
+}
+.button:hover {
+    opacity: 1;
+    filter: alpha(opacity = 100);
+}
+.undo {
+    /*    width: 101px;
+        height: 111px;
+        background-image: url("buttons.png");
+        background-position: -303px 0px;*/
+}
+.submit {
+    width: 101px;
+    height: 111px;
+    background-image: url("buttons.png");
+    background-position: -101px 0px;
+}
+.send {
+    width: 101px;
+    height: 111px;
+    background-image: url("buttons.png");
+    background-position: -202px 0px;
+}
+.small_button {
+    position: absolute;
+    width: 101px;
+    min-width: 101px;
+    height: 49px;
+    min-height: 49px;
+    background-image: url("button_small.png");
+    opacity: 0.8;
+    filter: alpha(opacity = 80);
+
+    font-size: 24px;
+    text-align: center;
+    text-shadow: #000000 0px 0px 3px;
+    line-height: 49px;
+}
+.small_button:hover {
+    opacity: 1;
+    filter: alpha(opacity = 100);
+}
+#chat {
+    display: none;
+    position: absolute;
+    width: 170px;
+    height: 100px;
+    top: 50px;
+    right: 35px;
+
+    background: #f8f8f8; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    /*    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4ZjhmOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ3JSIgc3RvcC1jb2xvcj0iI2U1ZTVlNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkMGQwZDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top, #f8f8f8 0%, #e5e5e5 47%, #d0d0d0 100%);  FF3.6+ 
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(47%,#e5e5e5), color-stop(100%,#d0d0d0));  Chrome,Safari4+ 
+        background: -webkit-linear-gradient(top, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%);  Chrome10+,Safari5.1+ 
+        background: -o-linear-gradient(top, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%);  Opera 11.10+ 
+        background: -ms-linear-gradient(top, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%);  IE10+ 
+        background: linear-gradient(to bottom, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%);  W3C 
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#d0d0d0',GradientType=0 );  IE6-8 */
+
+    box-shadow: inset 0 0 5px #000000;
+}
+#log {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: #f8f8f8; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4ZjhmOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ3JSIgc3RvcC1jb2xvcj0iI2U1ZTVlNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkMGQwZDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #f8f8f8 0%, #e5e5e5 47%, #d0d0d0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(47%,#e5e5e5), color-stop(100%,#d0d0d0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #f8f8f8 0%,#e5e5e5 47%,#d0d0d0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#d0d0d0',GradientType=0 ); /* IE6-8 */
+
+    box-shadow: inset 0 0 5px #000000;
+    overflow-y: auto; 
+    color: #000000;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    line-height: 15px;
+}
+#chat_input {
+    position:absolute;
+    bottom:2px;
+    background: transparent;
+    border: none;
+    width: 838px;
+    height:18px;
+    padding-left: 2px;
+    line-height: 18px;
+}
+#player1, #player2 {position: absolute;color: #FFF;padding: 4px 10px 0 10px;}
+#player1.selected, #player2.selected {background-color: #817535;}
+.white-small-checker {
+    display: inline-block;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    background-image: url("checkers.png");
+    background-size: 100% 200%;
+    /*background-position: 0px 21px;*/
+    margin-bottom: -6px;
+}
+.brown-small-checker {    
+    display: inline-block;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    background-image: url("checkers.png");
+    background-size: 100% 200%;
+    background-position: 0px 21px;
+    margin-bottom: -6px;
+}
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+.hidden {
+    display: none;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+.invisible {
+    visibility: hidden;
+}
+.clearfix:before, .clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+.timer {display: none;}
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+@media (max-width: 761px) {
+    #gui {
+        top: 0;
+        right: 15%;
+        bottom: 0;
+        left: 15%;
+
+        margin: 0 auto;
+
+        width: auto;
+        height: auto;
+        /*max-width: 300px;*/
+        /*max-height: 200px;*/
+    }
+    .players {display: none;}
+    .handover {font-size: 7px;border-radius: 0;padding: 4px 0;height: auto;line-height: inherit;}
+    /*word-wrap: break-word;*/
+
+    .visible-mobile {
+        background-color: #222;
+        background-image: url('../images/playersbg.png');
+        background-size: 100% 100%;
+
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+
+        height: auto;
+        /*max-height: 200px;*/
+
+        width: 15%;
+
+        color: #FFF;
+
+        text-align: center !important;
+    }
+    .visible-mobile[player1] {
+        right: 0;
+    }
+    .visible-mobile[player2] {
+        left: 0;
+    }
+
+    .visible-mobile #p1img,.visible-mobile #p2img       {margin: 10px 0 0 0;width: 15px;height: 15px;}
+    .visible-mobile #p1status,.visible-mobile #p2status {margin: 10px auto 0 auto;width: 5px;height: 5px;border-radius: 50%;text-align: center !important;display: none;}
+    .visible-mobile #p1status.opponent,.visible-mobile #p2status.opponent {display: block;}
+    .visible-mobile .timer1,.visible-mobile .timer2     {margin: 10px 0 0 0;font-size: 7px;}
+    .visible-mobile #p1name,.visible-mobile #p2name     {margin: 10px 0 0 0;font-size: 7px;text-align: center !important;}
+    .visible-mobile #p1wins,.visible-mobile #p2wins     {margin: 10px 0;font-size: 7px;text-align: center !important;}
+
+    .visible-mobile #p1status.opponent,
+    .visible-mobile #p2status.opponent {background-color: red;}
+    .visible-mobile #p2status.connected,
+    .visible-mobile #p1status.connected {background-color: green;}
+
+    .timer {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 1%;
+        right: 49%;
+        width: 3.5%;
+        cursor: pointer;
+        background-color: #222;
+        color: #FFF;
+        font-size: 7px;
+        text-align: center !important;
+        font-family: Tahoma, Arial;
+    }
+    #end_game * {
+        text-align: right !important;
+    }
+    #end_game .btn {
+        margin-bottom: 5px;
+    }
+    #end_game {
+        text-align: right;
+        top: 1%;
+        right: 1%;
+        bottom: 1%;
+        left: 1%;
+        width: 98%;
+        height: 98%;
+    }
+}
+
+@media (min-width: 762px) and (max-width: 831px) {
+    #gui {
+        top: 0;
+        right: auto;
+        left: 130px;
+        width: 600px;
+        height: 100%;
+        max-height: 400px;
+        margin: 0;
+    }
+    .players {
+        top: 0;
+        left: 0;
+        width: 130px;
+        height: 100%;
+        max-height: 400px;
+        padding: 15px 12px;
+        background-size: 100% 100%;
+        font-size: 9px;
+    }
+}
+
+@media (min-width: 832px) and (max-width: 891px) {
+    #gui {
+        top: 0;
+        right: auto;
+        left: 140px;
+        width: 650px;
+        height: 100%;
+        max-height: 450px;
+        margin: 0;
+    }
+    .players {
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 100%;
+        max-height: 450px;
+        padding: 15px 12px;
+        background-size: 100% 100%;
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 892px) and (max-width: 931px) {
+    #gui {
+        top: 0;
+        right: auto;
+        left: 140px;
+        width: 700px;
+        height: 100%;
+        max-height: 500px;
+        margin: 0;
+    }
+    .players {
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 100%;
+        max-height: 500px;
+        padding: 15px 12px;
+        background-size: 100% 100%;
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 932px) and (max-width: 991px) {
+    #gui {
+        top: 0;
+        right: auto;
+        left: 170px;
+        width: 750px;
+        height: 100%;
+        max-height: 550px;
+        margin: 0;
+    }
+    .players {
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 100%;
+        max-height: 550px;
+        padding: 15px 12px;
+        background-size: 100% 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #gui {
+        top: 0;
+        right: auto;
+        left: 170px;
+        width: 800px;
+        height: 100%;
+        max-height: 600px;
+        margin: 0;
+    }
+    .players {
+        top: 0;
+        left: 0;
+        width: 170px;
+        height: 100%;
+        max-height: 600px;
+        padding: 15px 12px;
+        background-size: 100% 100%;
+    }
+}
+
+
+.games-play {
+    position: relative;
+    height: 900px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#end_game .details  {
+
+}
+
+#end_game .details .winner_img {
+    width: 68px;
+    position: absolute;
+    right: -10px;
+    top: -3px;
+}
+#end_game .details .winner_img img , #end_game .details .user_avatar img , #end_game .details .center-money img{
+    max-width: 100%
+}
+
+#end_game .details .center-money {
+    width: 100%;
+    display: block;
+}
+
+#end_game .details .user_avatar {
+    width: 145px;
+    text-align: center;
+}

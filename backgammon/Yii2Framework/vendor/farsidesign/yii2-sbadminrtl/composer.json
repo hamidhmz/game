@@ -1,0 +1,36 @@
+{
+    "name": "farsidesign/yii2-sbadminrtl",
+    "description": "SB Admin Rtl from Start Bootstrap as a backend UI for Yii 2 Framework",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2", "yii", "extension", "PHP", "rtl", "sbadminrtl",
+        "asset", "bundle",
+        "Start-Bootstrap", "sb-admin-2",
+        "backend", "admin", "ui", "user-interface", "theme"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "moslem mobarakeh",
+            "email": "info@farsidesign.com",
+			"homepage": "https://github.com/farsidesign"
+        }
+    ],
+	"version": "2.0.0",
+	"minimum-stability":"dev",
+    "require": {
+        "yiisoft/yii2": "2.*",
+        "yiisoft/yii2-bootstrap": "2.*",
+        "rmrevin/yii2-fontawesome": "~2.12",
+        "airani/yii2-bootstrap-rtl": "*",
+        "onokumus/metismenu": "*",
+        "datatables/datatables": "*",
+        "imsky/holder": "*",
+        "nostalgiaz/bootstrap-switch": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "farsidesign\\sbadminrtl\\": ""
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.join-game {cursor: pointer;}
+.online-users {
+    display: block;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 300px;
+    height: 300px;
+}
+.online-users li {
+    display: block;
+    padding: 5px 0;
+    border-bottom: 1px solid #AAA;
+}
+.waiting-tables {
+    padding: 15px;
+}
+.waiting-tables .title {
+    margin: 0;border-bottom: 1px solid #AAA;padding: 0 0 15px;
+}
+.waiting-tables .list {
+    overflow: hidden;overflow-y: scroll;height: 300px;min-height: 300px;
+}
+.waiting-tables .list .header {
+    border-bottom: 1px solid #AAA;padding: 5px;
+}
+.waiting-tables .list .header .row {
+    margin-bottom: 0;
+}
+.waiting-tables .list .body {}
+.waiting-tables .list .body .item {
+    border-bottom: 1px solid #AAA;padding: 5px;
+}
+.waiting-tables .list .body .item .row {
+    margin-bottom: 0;
+}
+/*.online-users li {
+    display: block;
+}*/
+

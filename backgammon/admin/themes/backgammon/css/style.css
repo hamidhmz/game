@@ -1,0 +1,15 @@
+.online-games, .online-users {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 200px;
+    max-height: 200px;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.online-users li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+

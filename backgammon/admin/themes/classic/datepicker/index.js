@@ -1,0 +1,1 @@
+$('.datepicker').persianDatepicker({format: 'YYYY/MM/DD'});
